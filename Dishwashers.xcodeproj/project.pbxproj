@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7DCADF8D1D7F17DC0026801A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADF8C1D7F17DC0026801A /* AppDelegate.swift */; };
+		7DCADF8F1D7F17DC0026801A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADF8E1D7F17DC0026801A /* ViewController.swift */; };
+		7DCADF921D7F17DC0026801A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADF901D7F17DC0026801A /* Main.storyboard */; };
+		7DCADF941D7F17DC0026801A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADF931D7F17DC0026801A /* Assets.xcassets */; };
+		7DCADF971D7F17DC0026801A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADF951D7F17DC0026801A /* LaunchScreen.storyboard */; };
+		7DCADFA21D7F17DC0026801A /* DishwashersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFA11D7F17DC0026801A /* DishwashersTests.swift */; };
+		7DCADFAD1D7F17DC0026801A /* DishwashersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFAC1D7F17DC0026801A /* DishwashersUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7DCADF9E1D7F17DC0026801A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7DCADF811D7F17DC0026801A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DCADF881D7F17DC0026801A;
+			remoteInfo = Dishwashers;
+		};
+		7DCADFA91D7F17DC0026801A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7DCADF811D7F17DC0026801A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DCADF881D7F17DC0026801A;
+			remoteInfo = Dishwashers;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7DCADF891D7F17DC0026801A /* Dishwashers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dishwashers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCADF8C1D7F17DC0026801A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7DCADF8E1D7F17DC0026801A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7DCADF911D7F17DC0026801A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7DCADF931D7F17DC0026801A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7DCADF961D7F17DC0026801A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7DCADF981D7F17DC0026801A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DCADF9D1D7F17DC0026801A /* DishwashersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishwashersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCADFA11D7F17DC0026801A /* DishwashersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwashersTests.swift; sourceTree = "<group>"; };
+		7DCADFA31D7F17DC0026801A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DCADFA81D7F17DC0026801A /* DishwashersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishwashersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCADFAC1D7F17DC0026801A /* DishwashersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwashersUITests.swift; sourceTree = "<group>"; };
+		7DCADFAE1D7F17DC0026801A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DCADF861D7F17DC0026801A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DCADF9A1D7F17DC0026801A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DCADFA51D7F17DC0026801A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7DCADF801D7F17DC0026801A = {
+			isa = PBXGroup;
+			children = (
+				7DCADF8B1D7F17DC0026801A /* Dishwashers */,
+				7DCADFA01D7F17DC0026801A /* DishwashersTests */,
+				7DCADFAB1D7F17DC0026801A /* DishwashersUITests */,
+				7DCADF8A1D7F17DC0026801A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7DCADF8A1D7F17DC0026801A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DCADF891D7F17DC0026801A /* Dishwashers.app */,
+				7DCADF9D1D7F17DC0026801A /* DishwashersTests.xctest */,
+				7DCADFA81D7F17DC0026801A /* DishwashersUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DCADF8B1D7F17DC0026801A /* Dishwashers */ = {
+			isa = PBXGroup;
+			children = (
+				7DCADF8C1D7F17DC0026801A /* AppDelegate.swift */,
+				7DCADF8E1D7F17DC0026801A /* ViewController.swift */,
+				7DCADF901D7F17DC0026801A /* Main.storyboard */,
+				7DCADF931D7F17DC0026801A /* Assets.xcassets */,
+				7DCADF951D7F17DC0026801A /* LaunchScreen.storyboard */,
+				7DCADF981D7F17DC0026801A /* Info.plist */,
+			);
+			path = Dishwashers;
+			sourceTree = "<group>";
+		};
+		7DCADFA01D7F17DC0026801A /* DishwashersTests */ = {
+			isa = PBXGroup;
+			children = (
+				7DCADFA11D7F17DC0026801A /* DishwashersTests.swift */,
+				7DCADFA31D7F17DC0026801A /* Info.plist */,
+			);
+			path = DishwashersTests;
+			sourceTree = "<group>";
+		};
+		7DCADFAB1D7F17DC0026801A /* DishwashersUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7DCADFAC1D7F17DC0026801A /* DishwashersUITests.swift */,
+				7DCADFAE1D7F17DC0026801A /* Info.plist */,
+			);
+			path = DishwashersUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DCADF881D7F17DC0026801A /* Dishwashers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DCADFB11D7F17DC0026801A /* Build configuration list for PBXNativeTarget "Dishwashers" */;
+			buildPhases = (
+				7DCADF851D7F17DC0026801A /* Sources */,
+				7DCADF861D7F17DC0026801A /* Frameworks */,
+				7DCADF871D7F17DC0026801A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dishwashers;
+			productName = Dishwashers;
+			productReference = 7DCADF891D7F17DC0026801A /* Dishwashers.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7DCADF9C1D7F17DC0026801A /* DishwashersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DCADFB41D7F17DC0026801A /* Build configuration list for PBXNativeTarget "DishwashersTests" */;
+			buildPhases = (
+				7DCADF991D7F17DC0026801A /* Sources */,
+				7DCADF9A1D7F17DC0026801A /* Frameworks */,
+				7DCADF9B1D7F17DC0026801A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DCADF9F1D7F17DC0026801A /* PBXTargetDependency */,
+			);
+			name = DishwashersTests;
+			productName = DishwashersTests;
+			productReference = 7DCADF9D1D7F17DC0026801A /* DishwashersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7DCADFA71D7F17DC0026801A /* DishwashersUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DCADFB71D7F17DC0026801A /* Build configuration list for PBXNativeTarget "DishwashersUITests" */;
+			buildPhases = (
+				7DCADFA41D7F17DC0026801A /* Sources */,
+				7DCADFA51D7F17DC0026801A /* Frameworks */,
+				7DCADFA61D7F17DC0026801A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7DCADFAA1D7F17DC0026801A /* PBXTargetDependency */,
+			);
+			name = DishwashersUITests;
+			productName = DishwashersUITests;
+			productReference = 7DCADFA81D7F17DC0026801A /* DishwashersUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DCADF811D7F17DC0026801A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Tenero;
+				TargetAttributes = {
+					7DCADF881D7F17DC0026801A = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					7DCADF9C1D7F17DC0026801A = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 7DCADF881D7F17DC0026801A;
+					};
+					7DCADFA71D7F17DC0026801A = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 7DCADF881D7F17DC0026801A;
+					};
+				};
+			};
+			buildConfigurationList = 7DCADF841D7F17DC0026801A /* Build configuration list for PBXProject "Dishwashers" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7DCADF801D7F17DC0026801A;
+			productRefGroup = 7DCADF8A1D7F17DC0026801A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DCADF881D7F17DC0026801A /* Dishwashers */,
+				7DCADF9C1D7F17DC0026801A /* DishwashersTests */,
+				7DCADFA71D7F17DC0026801A /* DishwashersUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7DCADF871D7F17DC0026801A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DCADF971D7F17DC0026801A /* LaunchScreen.storyboard in Resources */,
+				7DCADF941D7F17DC0026801A /* Assets.xcassets in Resources */,
+				7DCADF921D7F17DC0026801A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DCADF9B1D7F17DC0026801A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DCADFA61D7F17DC0026801A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DCADF851D7F17DC0026801A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DCADF8F1D7F17DC0026801A /* ViewController.swift in Sources */,
+				7DCADF8D1D7F17DC0026801A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DCADF991D7F17DC0026801A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DCADFA21D7F17DC0026801A /* DishwashersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DCADFA41D7F17DC0026801A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DCADFAD1D7F17DC0026801A /* DishwashersUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7DCADF9F1D7F17DC0026801A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DCADF881D7F17DC0026801A /* Dishwashers */;
+			targetProxy = 7DCADF9E1D7F17DC0026801A /* PBXContainerItemProxy */;
+		};
+		7DCADFAA1D7F17DC0026801A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DCADF881D7F17DC0026801A /* Dishwashers */;
+			targetProxy = 7DCADFA91D7F17DC0026801A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7DCADF901D7F17DC0026801A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCADF911D7F17DC0026801A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7DCADF951D7F17DC0026801A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCADF961D7F17DC0026801A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7DCADFAF1D7F17DC0026801A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		7DCADFB01D7F17DC0026801A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7DCADFB21D7F17DC0026801A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Dishwashers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.tenero-mobile.Dishwashers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7DCADFB31D7F17DC0026801A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Dishwashers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.tenero-mobile.Dishwashers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7DCADFB51D7F17DC0026801A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DishwashersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.tenero-mobile.DishwashersTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dishwashers.app/Dishwashers";
+			};
+			name = Debug;
+		};
+		7DCADFB61D7F17DC0026801A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DishwashersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.tenero-mobile.DishwashersTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dishwashers.app/Dishwashers";
+			};
+			name = Release;
+		};
+		7DCADFB81D7F17DC0026801A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DishwashersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.tenero-mobile.DishwashersUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Dishwashers;
+			};
+			name = Debug;
+		};
+		7DCADFB91D7F17DC0026801A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DishwashersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.tenero-mobile.DishwashersUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Dishwashers;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DCADF841D7F17DC0026801A /* Build configuration list for PBXProject "Dishwashers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DCADFAF1D7F17DC0026801A /* Debug */,
+				7DCADFB01D7F17DC0026801A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DCADFB11D7F17DC0026801A /* Build configuration list for PBXNativeTarget "Dishwashers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DCADFB21D7F17DC0026801A /* Debug */,
+				7DCADFB31D7F17DC0026801A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7DCADFB41D7F17DC0026801A /* Build configuration list for PBXNativeTarget "DishwashersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DCADFB51D7F17DC0026801A /* Debug */,
+				7DCADFB61D7F17DC0026801A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7DCADFB71D7F17DC0026801A /* Build configuration list for PBXNativeTarget "DishwashersUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DCADFB81D7F17DC0026801A /* Debug */,
+				7DCADFB91D7F17DC0026801A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7DCADF811D7F17DC0026801A /* Project object */;
+}
