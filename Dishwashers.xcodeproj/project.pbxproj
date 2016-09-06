@@ -17,6 +17,8 @@
 		7DCADFBF1D7F1A9F0026801A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCADFBC1D7F1A9F0026801A /* Alamofire.framework */; };
 		7DCADFC01D7F1A9F0026801A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCADFBD1D7F1A9F0026801A /* AlamofireImage.framework */; };
 		7DCADFC11D7F1A9F0026801A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCADFBE1D7F1A9F0026801A /* SwiftyJSON.framework */; };
+		7DCADFC41D7F200E0026801A /* product-grid-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADFC31D7F200E0026801A /* product-grid-response.json */; };
+		7DCADFC61D7F20FF0026801A /* product.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADFC51D7F20FF0026801A /* product.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		7DCADFBC1D7F1A9F0026801A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7DCADFBD1D7F1A9F0026801A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		7DCADFBE1D7F1A9F0026801A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		7DCADFC31D7F200E0026801A /* product-grid-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "product-grid-response.json"; sourceTree = "<group>"; };
+		7DCADFC51D7F20FF0026801A /* product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = product.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 			children = (
 				7DCADFA11D7F17DC0026801A /* DishwashersTests.swift */,
 				7DCADFA31D7F17DC0026801A /* Info.plist */,
+				7DCADFC31D7F200E0026801A /* product-grid-response.json */,
+				7DCADFC51D7F20FF0026801A /* product.json */,
 			);
 			path = DishwashersTests;
 			sourceTree = "<group>";
@@ -256,6 +262,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DCADFC41D7F200E0026801A /* product-grid-response.json in Resources */,
+				7DCADFC61D7F20FF0026801A /* product.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
