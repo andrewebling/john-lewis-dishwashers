@@ -8,6 +8,7 @@
 
 import XCTest
 
+// this is used to decouple code/tests from the Storyboard
 class ProductCollectionViewCellFake: ProductCollectionViewCell {
     
     override init(frame: CGRect) {
@@ -40,6 +41,7 @@ class ProductCollectionViewCellTests: XCTestCase {
     func testConfigureWithProduct() {
         
         let product = Product(productID: 12345, price: 678.90, title: "ConfiguredTitle", image: NSURL())
+        
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
         formatter.locale = NSLocale(localeIdentifier: "en_GB")
