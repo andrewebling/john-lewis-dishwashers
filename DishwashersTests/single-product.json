@@ -1,0 +1,37 @@
+{
+    "productId": "2915517",
+    "type": "product",
+    "title": "Whirlpool WFO3P33DLUK Freestanding Dishwasher, WhIte",
+    "code": "81704201",
+    "averageRating": 0,
+    "reviews": 0,
+    "price": {
+        "was": "",
+        "then1": "",
+        "then2": "",
+        "now": "599.00",
+        "uom": "",
+        "currency": "GBP"
+    },
+    "image": "//johnlewis.scene7.com/is/image/JohnLewis/236331171?",
+    "additionalServices": [
+                           "2 year guarantee included",
+                           "5 years Added Care for your home appliance (includes guarantee period) £140.00"
+                           ],
+    "displaySpecialOffer": "",
+    "promoMessages": {
+        "priceMatched": "",
+        "offer": "",
+        "customPromotionalMessage": "",
+        "bundleHeadline": "",
+        "customSpecialOffer": {}
+    },
+    "colorSwatches": [],
+    "colorSwatchSelected": 0,
+    "colorWheelMessage": "",
+    "outOfStock": false,
+    "emailMeWhenAvailable": false,
+    "availabilityMessage": "",
+    "compare": true,
+    "fabric": ""
+}
