@@ -14,6 +14,7 @@ enum JSONParsingError: ErrorType {
     case InvalidPrice
     case InvalidTitle
     case InvalidImageURL
+    case InvalidProductsArray
 }
 
 class ProductParser {
@@ -42,5 +43,27 @@ class ProductParser {
                        price: price,
                        title: title,
                        image: imageURL)
+    }
+    
+    static func productsFromJSON(json: JSON) throws -> [Product] {
+        
+        guard let jsonProducts = json["products"].array else {
+            throw JSONParsingError.InvalidProductsArray
+        }
+        
+        var products = [Product]()
+        
+        jsonProducts.forEach { (productJSON) in
+            
+            do {
+                try products.append(singleProductFromJSON(productJSON))
+            } catch let error {
+                /* For purposes of this exercise, simply print an error and omit problematic products from results.
+                 * In a real app, this should be reported back via an endpoint or via analytics. */
+                print("Product parse error at index \(jsonProducts.indexOf(productJSON)): \(error)")
+            }
+        }
+        
+        return products
     }
 }

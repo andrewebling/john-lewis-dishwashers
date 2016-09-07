@@ -31,4 +31,22 @@ class ProductTests: JSONIntegrationTest {
         XCTAssertEqual(product.title, "Whirlpool WFO3P33DLUK Freestanding Dishwasher, WhIte")
         XCTAssertEqual(product.image.absoluteString, "https://johnlewis.scene7.com/is/image/JohnLewis/236331171?")
     }
+    
+    func testParseProducts() {
+        let fixtureData = self.fixtureDataForResourceName("product-grid-response")
+        let json = JSON(data: fixtureData)
+        let products = try! ProductParser.productsFromJSON(json)
+        
+        XCTAssertEqual(products.count, 20)
+        
+        guard let product = products.last else {
+            XCTFail("No last object in returned products array")
+            return
+        }
+        
+        XCTAssertEqual(product.productID, 2641341)
+        XCTAssertEqual(product.price, 679.00)
+        XCTAssertEqual(product.title, "Miele G4720 SC Slimline Freestanding Dishwasher, White")
+        XCTAssertEqual(product.image.absoluteString, "https://johnlewis.scene7.com/is/image/JohnLewis/235997186?")
+    }
 }
