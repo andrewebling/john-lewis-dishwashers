@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7DCADF8D1D7F17DC0026801A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADF8C1D7F17DC0026801A /* AppDelegate.swift */; };
-		7DCADF8F1D7F17DC0026801A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADF8E1D7F17DC0026801A /* ViewController.swift */; };
+		7DCADF8F1D7F17DC0026801A /* ProductGridCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADF8E1D7F17DC0026801A /* ProductGridCollectionViewController.swift */; };
 		7DCADF921D7F17DC0026801A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADF901D7F17DC0026801A /* Main.storyboard */; };
 		7DCADF941D7F17DC0026801A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADF931D7F17DC0026801A /* Assets.xcassets */; };
 		7DCADF971D7F17DC0026801A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADF951D7F17DC0026801A /* LaunchScreen.storyboard */; };
@@ -28,6 +28,9 @@
 		7DCADFD31D80098B0026801A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCADFBC1D7F1A9F0026801A /* Alamofire.framework */; };
 		7DCADFD41D80098B0026801A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCADFBD1D7F1A9F0026801A /* AlamofireImage.framework */; };
 		7DCADFD51D80098B0026801A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCADFBE1D7F1A9F0026801A /* SwiftyJSON.framework */; };
+		7DCADFD71D8044150026801A /* StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFD61D8044150026801A /* StoryboardTests.swift */; };
+		7DCADFD81D8044890026801A /* ProductGridCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADF8E1D7F17DC0026801A /* ProductGridCollectionViewController.swift */; };
+		7DCADFD91D80451C0026801A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADF901D7F17DC0026801A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,7 @@
 /* Begin PBXFileReference section */
 		7DCADF891D7F17DC0026801A /* Dishwashers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dishwashers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DCADF8C1D7F17DC0026801A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7DCADF8E1D7F17DC0026801A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7DCADF8E1D7F17DC0026801A /* ProductGridCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridCollectionViewController.swift; sourceTree = "<group>"; };
 		7DCADF911D7F17DC0026801A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7DCADF931D7F17DC0026801A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DCADF961D7F17DC0026801A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		7DCADFCB1D80066B0026801A /* single-product.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "single-product.json"; sourceTree = "<group>"; };
 		7DCADFCD1D8008850026801A /* ProductParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductParser.swift; sourceTree = "<group>"; };
 		7DCADFD01D8008DA0026801A /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7DCADFD61D8044150026801A /* StoryboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				7DCADF8C1D7F17DC0026801A /* AppDelegate.swift */,
-				7DCADF8E1D7F17DC0026801A /* ViewController.swift */,
+				7DCADF8E1D7F17DC0026801A /* ProductGridCollectionViewController.swift */,
 				7DCADF901D7F17DC0026801A /* Main.storyboard */,
 				7DCADF931D7F17DC0026801A /* Assets.xcassets */,
 				7DCADF951D7F17DC0026801A /* LaunchScreen.storyboard */,
@@ -154,6 +158,7 @@
 				7DCADFC71D7F26F90026801A /* JSONIntegrationTest.swift */,
 				7DCADFC91D8005FD0026801A /* ProductTests.swift */,
 				7DCADFCB1D80066B0026801A /* single-product.json */,
+				7DCADFD61D8044150026801A /* StoryboardTests.swift */,
 			);
 			path = DishwashersTests;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				7DCADFCC1D80066B0026801A /* single-product.json in Resources */,
 				7DCADFC41D7F200E0026801A /* product-grid-response.json in Resources */,
 				7DCADFC61D7F20FF0026801A /* product.json in Resources */,
+				7DCADFD91D80451C0026801A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +329,7 @@
 			files = (
 				7DCADFCE1D8008850026801A /* ProductParser.swift in Sources */,
 				7DCADFD11D8008DA0026801A /* Product.swift in Sources */,
-				7DCADF8F1D7F17DC0026801A /* ViewController.swift in Sources */,
+				7DCADF8F1D7F17DC0026801A /* ProductGridCollectionViewController.swift in Sources */,
 				7DCADF8D1D7F17DC0026801A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,8 +339,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCADFCF1D8008850026801A /* ProductParser.swift in Sources */,
+				7DCADFD71D8044150026801A /* StoryboardTests.swift in Sources */,
 				7DCADFC81D7F26F90026801A /* JSONIntegrationTest.swift in Sources */,
 				7DCADFD21D8008DA0026801A /* Product.swift in Sources */,
+				7DCADFD81D8044890026801A /* ProductGridCollectionViewController.swift in Sources */,
 				7DCADFCA1D8005FD0026801A /* ProductTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
