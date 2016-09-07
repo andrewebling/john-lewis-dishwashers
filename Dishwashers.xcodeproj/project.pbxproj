@@ -31,6 +31,11 @@
 		7DCADFD71D8044150026801A /* StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFD61D8044150026801A /* StoryboardTests.swift */; };
 		7DCADFD81D8044890026801A /* ProductGridCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADF8E1D7F17DC0026801A /* ProductGridCollectionViewController.swift */; };
 		7DCADFD91D80451C0026801A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DCADF901D7F17DC0026801A /* Main.storyboard */; };
+		7DCADFDB1D8059610026801A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFDA1D8059610026801A /* ProductCollectionViewCell.swift */; };
+		7DCADFDC1D8059610026801A /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFDA1D8059610026801A /* ProductCollectionViewCell.swift */; };
+		7DCADFDE1D805F160026801A /* ProductGridDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFDD1D805F160026801A /* ProductGridDataSourceTests.swift */; };
+		7DCADFE01D805FC30026801A /* ProductGridDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */; };
+		7DCADFE11D805FC30026801A /* ProductGridDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +81,9 @@
 		7DCADFCD1D8008850026801A /* ProductParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductParser.swift; sourceTree = "<group>"; };
 		7DCADFD01D8008DA0026801A /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7DCADFD61D8044150026801A /* StoryboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardTests.swift; sourceTree = "<group>"; };
+		7DCADFDA1D8059610026801A /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		7DCADFDD1D805F160026801A /* ProductGridDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGridDataSourceTests.swift; sourceTree = "<group>"; };
+		7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGridDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,8 @@
 				7DCADF981D7F17DC0026801A /* Info.plist */,
 				7DCADFCD1D8008850026801A /* ProductParser.swift */,
 				7DCADFD01D8008DA0026801A /* Product.swift */,
+				7DCADFDA1D8059610026801A /* ProductCollectionViewCell.swift */,
+				7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */,
 			);
 			path = Dishwashers;
 			sourceTree = "<group>";
@@ -159,6 +169,7 @@
 				7DCADFC91D8005FD0026801A /* ProductTests.swift */,
 				7DCADFCB1D80066B0026801A /* single-product.json */,
 				7DCADFD61D8044150026801A /* StoryboardTests.swift */,
+				7DCADFDD1D805F160026801A /* ProductGridDataSourceTests.swift */,
 			);
 			path = DishwashersTests;
 			sourceTree = "<group>";
@@ -329,7 +340,9 @@
 			files = (
 				7DCADFCE1D8008850026801A /* ProductParser.swift in Sources */,
 				7DCADFD11D8008DA0026801A /* Product.swift in Sources */,
+				7DCADFDB1D8059610026801A /* ProductCollectionViewCell.swift in Sources */,
 				7DCADF8F1D7F17DC0026801A /* ProductGridCollectionViewController.swift in Sources */,
+				7DCADFE01D805FC30026801A /* ProductGridDataSource.swift in Sources */,
 				7DCADF8D1D7F17DC0026801A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,11 +351,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DCADFDE1D805F160026801A /* ProductGridDataSourceTests.swift in Sources */,
 				7DCADFCF1D8008850026801A /* ProductParser.swift in Sources */,
 				7DCADFD71D8044150026801A /* StoryboardTests.swift in Sources */,
+				7DCADFDC1D8059610026801A /* ProductCollectionViewCell.swift in Sources */,
 				7DCADFC81D7F26F90026801A /* JSONIntegrationTest.swift in Sources */,
 				7DCADFD21D8008DA0026801A /* Product.swift in Sources */,
 				7DCADFD81D8044890026801A /* ProductGridCollectionViewController.swift in Sources */,
+				7DCADFE11D805FC30026801A /* ProductGridDataSource.swift in Sources */,
 				7DCADFCA1D8005FD0026801A /* ProductTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

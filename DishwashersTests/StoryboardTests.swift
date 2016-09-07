@@ -29,9 +29,11 @@ class StoryboardTests: XCTestCase {
             return
         }
         
-        guard let _ = navigationController.topViewController as? ProductGridCollectionViewController else {
+        guard let collectionVC = navigationController.topViewController as? ProductGridCollectionViewController else {
             XCTFail("Did not find an instance of ProductGridCollectionViewController as the navigationController's topViewController")
             return
         }
+                
+        XCTAssertEqual(collectionVC.navigationItem.title, "Dishwashers")
     }
 }
