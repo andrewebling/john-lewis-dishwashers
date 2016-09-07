@@ -8,15 +8,23 @@
 
 import XCTest
 
+class ProductGridDataSourceFake: ProductGridDataSource {
+    
+    override func internalCollectionView(collectionView: UICollectionView, cellForItemAtIndexPath: NSIndexPath) -> ProductCollectionViewCell {
+        return ProductCollectionViewCell(frame: CGRectZero)
+    }
+}
+
 class ProductGridDataSourceTests: XCTestCase {
     
-    let fakeData = [Product](count: 42, repeatedValue: Product(productID: 0, price: 0.0, title: "", image: NSURL()))
+    let fakeCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
+    let fakeData = [Product](count: 42, repeatedValue: Product(productID: 4444, price: 333.66, title: "TestTitle", image: NSURL()))
     var dataSource: ProductGridDataSource!
     
     override func setUp() {
         super.setUp()
         
-        self.dataSource = ProductGridDataSource(products: self.fakeData)
+        self.dataSource = ProductGridDataSourceFake(products: self.fakeData)
     }
     
     override func tearDown() {
@@ -25,8 +33,16 @@ class ProductGridDataSourceTests: XCTestCase {
     }
 
     func testNumberOfItemsInSection() {
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
-        XCTAssertEqual(self.dataSource.collectionView(collectionView, numberOfItemsInSection: 0),
+        
+        XCTAssertEqual(self.dataSource.collectionView(self.fakeCollectionView, numberOfItemsInSection: 0),
                        42)
+    }
+    
+    func testCellForItemAtIndexPath() {
+        
+        let cell = self.dataSource.collectionView(self.fakeCollectionView,
+                                                  cellForItemAtIndexPath: NSIndexPath(forItem: 0, inSection: 0))
+        
+        XCTAssertTrue(cell is ProductCollectionViewCell)
     }
 }

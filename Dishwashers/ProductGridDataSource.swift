@@ -23,6 +23,16 @@ class ProductGridDataSource: NSObject, UICollectionViewDataSource {
     
     @objc func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        return UICollectionViewCell(frame: CGRectZero)
+        let cell = internalCollectionView(collectionView, cellForItemAtIndexPath: indexPath)
+        
+        return cell
+    }
+    
+    internal func internalCollectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> ProductCollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ProductCollectionViewCell.reuseId, forIndexPath: indexPath) as? ProductCollectionViewCell else {
+            preconditionFailure("Collection view configured with wrong type of cell")
+        }
+        
+        return cell
     }
 }
