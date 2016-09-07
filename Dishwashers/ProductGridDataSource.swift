@@ -10,7 +10,14 @@ import UIKit
 
 class ProductGridDataSource: NSObject, UICollectionViewDataSource {
 
-    let products: [Product]
+    private let products: [Product]
+    
+    // number formatters are expensive - create once on demand & reuse
+    lazy var priceFormatter: NSNumberFormatter = {
+        let formatter = NSNumberFormatter() // locale defaults to current
+        formatter.numberStyle = .CurrencyStyle
+        return formatter
+    }()
     
     init(products: [Product]) {
         self.products = products
@@ -25,6 +32,11 @@ class ProductGridDataSource: NSObject, UICollectionViewDataSource {
         
         let cell = internalCollectionView(collectionView, cellForItemAtIndexPath: indexPath)
         
+        if let product = productForIndexPath(indexPath) {
+            cell.configureWithProduct(product,
+                                      priceFormatter: self.priceFormatter)
+        }
+        
         return cell
     }
     
@@ -34,5 +46,12 @@ class ProductGridDataSource: NSObject, UICollectionViewDataSource {
         }
         
         return cell
+    }
+    
+    private func productForIndexPath(indexPath: NSIndexPath) -> Product? {
+        guard indexPath.row < self.products.count else {
+            return nil
+        }
+        return self.products[indexPath.row]
     }
 }

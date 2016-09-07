@@ -11,7 +11,7 @@ import XCTest
 class ProductGridDataSourceFake: ProductGridDataSource {
     
     override func internalCollectionView(collectionView: UICollectionView, cellForItemAtIndexPath: NSIndexPath) -> ProductCollectionViewCell {
-        return ProductCollectionViewCell(frame: CGRectZero)
+        return ProductCollectionViewCellFake(frame: CGRectZero)
     }
 }
 
@@ -25,6 +25,9 @@ class ProductGridDataSourceTests: XCTestCase {
         super.setUp()
         
         self.dataSource = ProductGridDataSourceFake(products: self.fakeData)
+        self.fakeCollectionView.dataSource = self.dataSource
+        self.fakeCollectionView.registerClass(ProductCollectionViewCellFake.self, forCellWithReuseIdentifier: ProductCollectionViewCell.reuseId)
+        
     }
     
     override func tearDown() {
