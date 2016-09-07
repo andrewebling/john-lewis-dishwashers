@@ -36,6 +36,7 @@
 		7DCADFDE1D805F160026801A /* ProductGridDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFDD1D805F160026801A /* ProductGridDataSourceTests.swift */; };
 		7DCADFE01D805FC30026801A /* ProductGridDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */; };
 		7DCADFE11D805FC30026801A /* ProductGridDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */; };
+		7DCADFE31D8072AF0026801A /* ProductCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFE21D8072AF0026801A /* ProductCollectionViewCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		7DCADFDA1D8059610026801A /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		7DCADFDD1D805F160026801A /* ProductGridDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGridDataSourceTests.swift; sourceTree = "<group>"; };
 		7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGridDataSource.swift; sourceTree = "<group>"; };
+		7DCADFE21D8072AF0026801A /* ProductCollectionViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				7DCADFCB1D80066B0026801A /* single-product.json */,
 				7DCADFD61D8044150026801A /* StoryboardTests.swift */,
 				7DCADFDD1D805F160026801A /* ProductGridDataSourceTests.swift */,
+				7DCADFE21D8072AF0026801A /* ProductCollectionViewCellTests.swift */,
 			);
 			path = DishwashersTests;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				7DCADFD21D8008DA0026801A /* Product.swift in Sources */,
 				7DCADFD81D8044890026801A /* ProductGridCollectionViewController.swift in Sources */,
 				7DCADFE11D805FC30026801A /* ProductGridDataSource.swift in Sources */,
+				7DCADFE31D8072AF0026801A /* ProductCollectionViewCellTests.swift in Sources */,
 				7DCADFCA1D8005FD0026801A /* ProductTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
