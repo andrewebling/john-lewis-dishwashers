@@ -9,10 +9,20 @@
 import UIKit
 
 class ProductGridCollectionViewController: UICollectionViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    lazy var serverController: ServerController = {
+        return ServerControllerImpl()
+    }()
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.serverController.fetchProducts({ (products) in
+                print(products)
+            
+            }) { (error) in
+                print("ERROR: \(error)")
+        }
     }
 }
 
