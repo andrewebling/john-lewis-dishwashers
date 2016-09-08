@@ -10,7 +10,8 @@ import UIKit
 
 class ProductGridCollectionViewController: UICollectionViewController {
     
-    lazy var serverController: ServerController = {
+    private var datasource: ProductGridDataSource!
+    internal lazy var serverController: ServerController = {
         return ServerControllerImpl()
     }()
     
@@ -19,13 +20,21 @@ class ProductGridCollectionViewController: UICollectionViewController {
         fetchProducts()
     }
     
-    func fetchProducts() {
-        self.serverController.fetchProducts({ (products) in
-                print(products)
+    private func fetchProducts() {
+        
+        self.serverController.fetchProducts({ products in
             
-            }) { (error) in
-                print("ERROR: \(error)")
+            self.configureDataSourceWithProducts(products)
+            self.collectionView?.reloadData()
+            
+        }) { (error) in
+            print("ERROR: \(error)")
         }
+    }
+    
+    private func configureDataSourceWithProducts(products: [Product]) {
+        self.datasource = ProductGridDataSource(products: products)
+        self.collectionView?.dataSource = self.datasource
     }
 }
 
