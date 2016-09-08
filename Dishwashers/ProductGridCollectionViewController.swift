@@ -16,7 +16,10 @@ class ProductGridCollectionViewController: UICollectionViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+        fetchProducts()
+    }
+    
+    func fetchProducts() {
         self.serverController.fetchProducts({ (products) in
                 print(products)
             
