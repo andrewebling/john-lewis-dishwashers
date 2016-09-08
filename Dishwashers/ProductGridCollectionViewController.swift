@@ -28,13 +28,19 @@ class ProductGridCollectionViewController: UICollectionViewController {
             self.collectionView?.reloadData()
             
         }) { (error) in
-            print("ERROR: \(error)")
+            self.showError(error)
         }
     }
     
     private func configureDataSourceWithProducts(products: [Product]) {
         self.datasource = ProductGridDataSource(products: products)
         self.collectionView?.dataSource = self.datasource
+    }
+    
+    private func showError(error: NSError?) {
+        let ac = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        self.presentViewController(ac, animated: true, completion: nil)
     }
 }
 
