@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ProductCollectionViewCell: UICollectionViewCell {
     static let reuseId = "ProductCollectionViewCellReuseId"
@@ -18,5 +19,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
     func configureWithProduct(product: Product, priceFormatter: NSNumberFormatter) {
         self.titleLabel.text = product.title
         self.priceLabel.text = priceFormatter.stringFromNumber(product.price)
+        self.imageView.af_setImageWithURL(product.image, placeholderImage: nil, imageTransition: .CrossDissolve(0.2))
     }
 }
