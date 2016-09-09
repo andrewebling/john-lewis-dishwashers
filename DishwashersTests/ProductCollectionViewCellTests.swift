@@ -40,13 +40,13 @@ class ProductCollectionViewCellTests: XCTestCase {
 
     func testConfigureWithProduct() {
         
-        let product = Product(productID: 12345, price: 678.90, title: "ConfiguredTitle", image: NSURL())
+        let product = Product(productID: 12345, price: 678.90, title: "ConfiguredTitle", image: NSURL(string: "http://foobar")!)
         
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
         formatter.locale = NSLocale(localeIdentifier: "en_GB")
         
-        self.cell.configureWithProduct(product, priceFormatter: formatter)
+        self.cell.configureWithProduct(product)
         
         XCTAssertEqual(cell.titleLabel.text, "ConfiguredTitle")
         XCTAssertEqual(cell.priceLabel.text, "£678.90")

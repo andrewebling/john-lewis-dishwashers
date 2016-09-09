@@ -16,9 +16,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
-    func configureWithProduct(product: Product, priceFormatter: NSNumberFormatter) {
+    func configureWithProduct(product: Product) {
         self.titleLabel.text = product.title
-        self.priceLabel.text = priceFormatter.stringFromNumber(product.price)
+        self.priceLabel.text = product.price.asPriceString()
         self.imageView.loadWithURL(product.image)    }
     
     func configureLookAndFeel() {

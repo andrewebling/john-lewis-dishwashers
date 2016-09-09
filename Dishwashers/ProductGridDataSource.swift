@@ -12,13 +12,6 @@ class ProductGridDataSource: NSObject {
 
     private let products: [Product]
     
-    // number formatters are expensive - create once on demand & reuse
-    private lazy var priceFormatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter() // locale defaults to current
-        formatter.numberStyle = .CurrencyStyle
-        return formatter
-    }()
-    
     init(products: [Product]) {
         self.products = products
         super.init()
@@ -56,7 +49,7 @@ extension ProductGridDataSource: UICollectionViewDataSource {
         
         if let product = productForIndexPath(indexPath) {
             
-            cell.configureWithProduct(product, priceFormatter: self.priceFormatter)
+            cell.configureWithProduct(product)
             cell.configureLookAndFeel()
         }
         

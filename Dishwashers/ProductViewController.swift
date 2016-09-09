@@ -30,7 +30,7 @@ class ProductViewController:UIViewController, ProductViewer {
     
     private func configureWithProduct(product: Product) {
         self.navigationItem.title = product.title
-        self.priceLabel.text = "\(product.price)"
+        self.priceLabel.text = product.price.asPriceString()
         self.imageView.loadWithURL(product.image)
     }
 }

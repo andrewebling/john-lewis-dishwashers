@@ -18,7 +18,7 @@ class ProductGridDataSourceFake: ProductGridDataSource {
 class ProductGridDataSourceTests: XCTestCase {
     
     let fakeCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
-    let fakeData = [Product](count: 42, repeatedValue: Product(productID: 4444, price: 333.66, title: "TestTitle", image: NSURL()))
+    let fakeData = [Product](count: 42, repeatedValue: Product(productID: 4444, price: 333.66, title: "TestTitle", image: NSURL(string: "http://foobar")!))
     var dataSource: ProductGridDataSource!
     
     override func setUp() {

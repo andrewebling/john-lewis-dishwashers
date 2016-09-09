@@ -43,6 +43,9 @@
 		7DCADFEB1D82CF800026801A /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFE91D82CF800026801A /* ProductViewController.swift */; };
 		7DCADFED1D82D5080026801A /* UIImageView+loadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFEC1D82D5080026801A /* UIImageView+loadURL.swift */; };
 		7DCADFEE1D82D5080026801A /* UIImageView+loadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFEC1D82D5080026801A /* UIImageView+loadURL.swift */; };
+		7DCADFF31D82DEE10026801A /* Float+price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFF21D82DEE10026801A /* Float+price.swift */; };
+		7DCADFF41D82DEE10026801A /* Float+price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFF21D82DEE10026801A /* Float+price.swift */; };
+		7DCADFF61D82DF350026801A /* Float+priceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFF51D82DF350026801A /* Float+priceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,8 @@
 		7DCADFE61D81A7540026801A /* ServerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerController.swift; sourceTree = "<group>"; };
 		7DCADFE91D82CF800026801A /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		7DCADFEC1D82D5080026801A /* UIImageView+loadURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadURL.swift"; sourceTree = "<group>"; };
+		7DCADFF21D82DEE10026801A /* Float+price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+price.swift"; sourceTree = "<group>"; };
+		7DCADFF51D82DF350026801A /* Float+priceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+priceTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +185,7 @@
 				7DCADFD61D8044150026801A /* StoryboardTests.swift */,
 				7DCADFDD1D805F160026801A /* ProductGridDataSourceTests.swift */,
 				7DCADFE21D8072AF0026801A /* ProductCollectionViewCellTests.swift */,
+				7DCADFF51D82DF350026801A /* Float+priceTests.swift */,
 			);
 			path = DishwashersTests;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 			children = (
 				7DCADFD01D8008DA0026801A /* Product.swift */,
 				7DCADFCD1D8008850026801A /* ProductParser.swift */,
+				7DCADFF21D82DEE10026801A /* Float+price.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -377,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DCADFF31D82DEE10026801A /* Float+price.swift in Sources */,
 				7DCADFCE1D8008850026801A /* ProductParser.swift in Sources */,
 				7DCADFE71D81A7540026801A /* ServerController.swift in Sources */,
 				7DCADFD11D8008DA0026801A /* Product.swift in Sources */,
@@ -395,10 +403,12 @@
 			files = (
 				7DCADFDE1D805F160026801A /* ProductGridDataSourceTests.swift in Sources */,
 				7DCADFCF1D8008850026801A /* ProductParser.swift in Sources */,
+				7DCADFF61D82DF350026801A /* Float+priceTests.swift in Sources */,
 				7DCADFD71D8044150026801A /* StoryboardTests.swift in Sources */,
 				7DCADFDC1D8059610026801A /* ProductCollectionViewCell.swift in Sources */,
 				7DCADFC81D7F26F90026801A /* JSONIntegrationTest.swift in Sources */,
 				7DCADFD21D8008DA0026801A /* Product.swift in Sources */,
+				7DCADFF41D82DEE10026801A /* Float+price.swift in Sources */,
 				7DCADFEB1D82CF800026801A /* ProductViewController.swift in Sources */,
 				7DCADFD81D8044890026801A /* ProductGridCollectionViewController.swift in Sources */,
 				7DCADFE81D81A7540026801A /* ServerController.swift in Sources */,
