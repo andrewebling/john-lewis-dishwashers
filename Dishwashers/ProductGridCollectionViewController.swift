@@ -36,7 +36,7 @@ class ProductGridCollectionViewController: UICollectionViewController {
             
             self.configureDataSourceWithProducts(products)
             self.collectionView?.reloadData()
-            
+            self.navigationItem.title = "Dishwashers (\(products.count))"
         }) { (error) in
             self.showError(error)
         }
