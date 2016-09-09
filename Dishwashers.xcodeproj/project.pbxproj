@@ -39,6 +39,10 @@
 		7DCADFE31D8072AF0026801A /* ProductCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFE21D8072AF0026801A /* ProductCollectionViewCellTests.swift */; };
 		7DCADFE71D81A7540026801A /* ServerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFE61D81A7540026801A /* ServerController.swift */; };
 		7DCADFE81D81A7540026801A /* ServerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFE61D81A7540026801A /* ServerController.swift */; };
+		7DCADFEA1D82CF800026801A /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFE91D82CF800026801A /* ProductViewController.swift */; };
+		7DCADFEB1D82CF800026801A /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFE91D82CF800026801A /* ProductViewController.swift */; };
+		7DCADFED1D82D5080026801A /* UIImageView+loadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFEC1D82D5080026801A /* UIImageView+loadURL.swift */; };
+		7DCADFEE1D82D5080026801A /* UIImageView+loadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCADFEC1D82D5080026801A /* UIImageView+loadURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,8 @@
 		7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGridDataSource.swift; sourceTree = "<group>"; };
 		7DCADFE21D8072AF0026801A /* ProductCollectionViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		7DCADFE61D81A7540026801A /* ServerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerController.swift; sourceTree = "<group>"; };
+		7DCADFE91D82CF800026801A /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		7DCADFEC1D82D5080026801A /* UIImageView+loadURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadURL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,8 @@
 				7DCADFDA1D8059610026801A /* ProductCollectionViewCell.swift */,
 				7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */,
 				7DCADFE61D81A7540026801A /* ServerController.swift */,
+				7DCADFE91D82CF800026801A /* ProductViewController.swift */,
+				7DCADFEC1D82D5080026801A /* UIImageView+loadURL.swift */,
 			);
 			path = Dishwashers;
 			sourceTree = "<group>";
@@ -351,6 +359,8 @@
 				7DCADFDB1D8059610026801A /* ProductCollectionViewCell.swift in Sources */,
 				7DCADF8F1D7F17DC0026801A /* ProductGridCollectionViewController.swift in Sources */,
 				7DCADFE01D805FC30026801A /* ProductGridDataSource.swift in Sources */,
+				7DCADFED1D82D5080026801A /* UIImageView+loadURL.swift in Sources */,
+				7DCADFEA1D82CF800026801A /* ProductViewController.swift in Sources */,
 				7DCADF8D1D7F17DC0026801A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,11 +375,13 @@
 				7DCADFDC1D8059610026801A /* ProductCollectionViewCell.swift in Sources */,
 				7DCADFC81D7F26F90026801A /* JSONIntegrationTest.swift in Sources */,
 				7DCADFD21D8008DA0026801A /* Product.swift in Sources */,
+				7DCADFEB1D82CF800026801A /* ProductViewController.swift in Sources */,
 				7DCADFD81D8044890026801A /* ProductGridCollectionViewController.swift in Sources */,
 				7DCADFE81D81A7540026801A /* ServerController.swift in Sources */,
 				7DCADFE11D805FC30026801A /* ProductGridDataSource.swift in Sources */,
 				7DCADFE31D8072AF0026801A /* ProductCollectionViewCellTests.swift in Sources */,
 				7DCADFCA1D8005FD0026801A /* ProductTests.swift in Sources */,
+				7DCADFEE1D82D5080026801A /* UIImageView+loadURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

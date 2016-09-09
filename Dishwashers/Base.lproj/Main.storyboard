@@ -72,6 +72,7 @@
                                     <outlet property="imageView" destination="PCd-Hu-lH1" id="1ed-wO-LWx"/>
                                     <outlet property="priceLabel" destination="XhB-BA-HcC" id="ePd-ar-zyh"/>
                                     <outlet property="titleLabel" destination="Gb0-C1-yAx" id="d0L-2H-f1G"/>
+                                    <segue destination="Aat-Yj-hD4" kind="show" id="SUO-m8-i87"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -85,6 +86,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tbv-FI-Z9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1143" y="158"/>
+        </scene>
+        <!--Product View Controller-->
+        <scene sceneID="hMU-tW-0qt">
+            <objects>
+                <viewController id="Aat-Yj-hD4" customClass="ProductViewController" customModule="Dishwashers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uPb-fL-ZCS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jml-Av-gcx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NjF-5w-yMm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qm5-D6-BBa">
+                                <rect key="frame" x="20" y="72" width="315" height="281"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utm-C8-OOf">
+                                <rect key="frame" x="438" y="88" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Qm5-D6-BBa" id="wS8-Vp-TOR"/>
+                        <outlet property="priceLabel" destination="utm-C8-OOf" id="lmb-0F-qKU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppn-dy-45n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837" y="158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TUF-5q-ebR">

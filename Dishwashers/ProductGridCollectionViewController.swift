@@ -20,6 +20,16 @@ class ProductGridCollectionViewController: UICollectionViewController {
         fetchProducts()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let cell = sender as? UICollectionViewCell,
+            let indexPath = self.collectionView?.indexPathForCell(cell),
+            let product = self.datasource.productForIndexPath(indexPath),
+            var productViewer = segue.destinationViewController as? ProductViewer {
+            
+            productViewer.product = product
+        }
+    }
+    
     private func fetchProducts() {
         
         self.serverController.fetchProducts({ products in
@@ -36,11 +46,16 @@ class ProductGridCollectionViewController: UICollectionViewController {
         self.datasource = ProductGridDataSource(products: products)
         self.collectionView?.dataSource = self.datasource
     }
-    
-    private func showError(error: NSError?) {
-        let ac = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        self.presentViewController(ac, animated: true, completion: nil)
-    }
 }
 
+extension UIViewController {
+    func showError(error: NSError?) {
+        self.presentViewController(alertControllerWithError(error), animated: true, completion: nil)
+    }
+    
+    private func alertControllerWithError(error: NSError?) -> UIAlertController {
+        let ac = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        return ac
+    }
+}

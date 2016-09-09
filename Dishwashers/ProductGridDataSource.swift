@@ -52,7 +52,7 @@ class ProductGridDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
     
-    private func productForIndexPath(indexPath: NSIndexPath) -> Product? {
+    internal func productForIndexPath(indexPath: NSIndexPath) -> Product? {
         
         guard indexPath.row < self.products.count else {
             return nil
