@@ -53,4 +53,16 @@ class ProductCollectionViewCellTests: XCTestCase {
         // imageView gets configured later when the image loads asynchronously
     }
 
+    func testPrepareForReuse() {
+        
+        cell.titleLabel.text = "TestTitleLabelValue"
+        cell.priceLabel.text = "TestPriceLabelValue"
+        cell.imageView.image = UIImage()
+        
+        cell.prepareForReuse()
+        
+        XCTAssertEqual(cell.titleLabel.text, "")
+        XCTAssertEqual(cell.priceLabel.text, "")
+        XCTAssertEqual(cell.imageView.image, nil)
+    }
 }

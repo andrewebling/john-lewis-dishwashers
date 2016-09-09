@@ -25,4 +25,12 @@ class ProductCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = UIColor(red: 0.867, green: 0.851, blue: 0.820, alpha: 1.00).CGColor
         self.layer.borderWidth = 0.5
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.titleLabel.text = ""
+        self.priceLabel.text = ""
+        self.imageView.image = nil
+    }
 }
