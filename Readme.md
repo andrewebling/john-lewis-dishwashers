@@ -37,6 +37,7 @@ In addition, a few Storyboard configuration tests were included, which would ena
  * It handles online/offline behaviour gracefully.
  * It has a great deal of community support and is at low risk of becoming abandonware in the future. 
 * AlamofireImageView - by the Alamofire Software Foundation; a library written in Swift which makes working with images in a network environment much simpler and cleaner. I chose to use this because:
+ * It piggybacks Alamofire.
  * It greatly reduces code volume and improves simplicity for populating a grid of ```UIImageView``` objects.
  * It has nice features like gently fading in the image, improving user experience.
 * SwiftyJSON - written by tangplin & lingoer; a library written in Swift which makes JSON parsing code a lot more readable and maintainable. Although it's fairly straightforward to write your own JSON parsing code, built on top of ```NSJSONSerialization``` I chose to use this because:
@@ -48,7 +49,8 @@ In addition, a few Storyboard configuration tests were included, which would ena
  
 # Points for Improvement
 
- * If this app was being developed/maintained by a larger team, I would probably recommend moving away from Storyboards.
  * If the network connection was offline when a request is tried, re-trying the request later, so content loads as soon as a usable network connection becomes available.
+ * Unit testing improvements - I still miss ```OCMock``` and reverting to fakes feels like a big backwards step. While it's still possible to use ```OCMock``` with Swift code, it requires the tests to be written in Objective-C. Given the lifetime of test code generally exceeds the code under test, this would not be desirable. In addition use of Storyboards make classical dependency injection impossible (since you aren't in control of the view controller initialization any more).
+ * If this app was being developed/maintained by a larger team, I would probably recommend moving away from Storyboards. This would aid straight forward dependency injection and sidestep Storyboard merge conflicts, which can be a problem with large teams using a standard SCM branching strategy like GitFlow.
  * UITests
  * UI scripts which could be used for automating capturing and updating screenshots for the App Store, when integrated into a solution like Fastlane.
