@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductGridDataSource: NSObject, UICollectionViewDataSource {
+class ProductGridDataSource: NSObject {
 
     private let products: [Product]
     
@@ -22,23 +22,6 @@ class ProductGridDataSource: NSObject, UICollectionViewDataSource {
     init(products: [Product]) {
         self.products = products
         super.init()
-    }
-    
-    @objc func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.products.count
-    }
-    
-    @objc func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        let cell = internalCollectionView(collectionView, cellForItemAtIndexPath: indexPath)
-        
-        if let product = productForIndexPath(indexPath) {
-            
-            cell.configureWithProduct(product, priceFormatter: self.priceFormatter)
-            cell.configureLookAndFeel()
-        }
-        
-        return cell
     }
     
     internal func internalCollectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> ProductCollectionViewCell {
@@ -58,5 +41,25 @@ class ProductGridDataSource: NSObject, UICollectionViewDataSource {
             return nil
         }
         return self.products[indexPath.row]
+    }
+}
+
+extension ProductGridDataSource: UICollectionViewDataSource {
+    
+    @objc func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.products.count
+    }
+    
+    @objc func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = internalCollectionView(collectionView, cellForItemAtIndexPath: indexPath)
+        
+        if let product = productForIndexPath(indexPath) {
+            
+            cell.configureWithProduct(product, priceFormatter: self.priceFormatter)
+            cell.configureLookAndFeel()
+        }
+        
+        return cell
     }
 }

@@ -12,9 +12,20 @@ Technical test for John Lewis by Andrew Ebling.
 1. Open a terminal and issue the following command within the top level project directory: ```carthage update --platform iOS```
 1. Open the Xcode project file and build in the normal way
 
+I chose to use Carthage over Cocoapods because:
+ * It's more modern/up to date/likely to be maintained longer
+ * Doesn't require the use of an Xcode Workspace, so less chance of confusion, should a developer/reviewer open the Project file instead
+ * All the libraries I want to use are compatible
+ * Simpler
+ * More flexible in the future
+ 
+Also happy using Cocoapods where necessary, however.
+
 # Architecture
 
 The app uses the standard MVC architecture, taking care to avoid the _Massive View Controller_ problem, by breaking out responsibilities like server access & ```UICollectionViewDatasource``` implementation into other classes, enabling them to be tested in isolation, independently of the view controller lifecycle.
+
+Alternative architectures like MVVM and VIPER were considered, but for an app of this size & complexity, did not represent the Agile mantra _"Simplest Possible Thing"_.
 
 # Unit Testing
 
@@ -27,6 +38,7 @@ In addition, a few Storyboard configuration tests were included, which would ena
 # Testing
 
 * I used a combination of using a temporarily invalid API key and Charles Proxy to re-write responses to check the app's behaviour of server errors etc.
+* I verified that online/offline behaviour worked as desired, relying on the Alamofire implementation.
 
 # Credits & Libraries Used
 

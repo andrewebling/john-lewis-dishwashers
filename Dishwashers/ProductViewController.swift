@@ -8,6 +8,7 @@
 
 import UIKit
 
+// used to decouple from other view controllers
 protocol ProductViewer {
     var product: Product? { get set }
 }
@@ -23,9 +24,13 @@ class ProductViewController:UIViewController, ProductViewer {
         super.viewWillAppear(animated)
         
         if let product = self.product {
-            self.navigationItem.title = product.title
-            self.priceLabel.text = "\(product.price)"
-            self.imageView.loadWithURL(product.image)
+            configureWithProduct(product)
         }
+    }
+    
+    private func configureWithProduct(product: Product) {
+        self.navigationItem.title = product.title
+        self.priceLabel.text = "\(product.price)"
+        self.imageView.loadWithURL(product.image)
     }
 }

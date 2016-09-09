@@ -8,6 +8,12 @@
 
 import Foundation
 
+/* struct rather than class because:
+ *   - passed by value (safer)
+ *   - free memberwise initialiser; less maintenance
+ *   - simple enclosed values 
+ *   - we don't need inheritance (yet!)
+ *   - more idiomatic.  */
 struct Product {
     let productID: Int
     let price: Float

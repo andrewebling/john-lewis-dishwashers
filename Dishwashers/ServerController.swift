@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+// code to an interface
 protocol ServerController {
     func fetchProducts(successBlock: ([Product]) -> Void, failureBlock: (error: NSError?) -> Void)
 }
@@ -36,6 +37,8 @@ class ServerControllerImpl: ServerController {
                     if let json = response.result.value {
                         do {
                             let products = try ProductParser.productsFromJSON(JSON(json))
+                            /* dispatch_async not strictly required as Alamofire executes this block on the main thread - but being 
+                             * defensive against future changes. */
                             dispatch_async(dispatch_get_main_queue(), {
                                 successBlock(products)
                             })

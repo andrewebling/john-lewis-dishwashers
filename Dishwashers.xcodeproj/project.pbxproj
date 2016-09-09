@@ -157,18 +157,13 @@
 			isa = PBXGroup;
 			children = (
 				7DCADF8C1D7F17DC0026801A /* AppDelegate.swift */,
-				7DCADF8E1D7F17DC0026801A /* ProductGridCollectionViewController.swift */,
+				7DCADFEF1D82D8390026801A /* Model */,
+				7DCADFF01D82D83F0026801A /* View */,
+				7DCADFF11D82D8470026801A /* Controller */,
 				7DCADF901D7F17DC0026801A /* Main.storyboard */,
 				7DCADF931D7F17DC0026801A /* Assets.xcassets */,
 				7DCADF951D7F17DC0026801A /* LaunchScreen.storyboard */,
 				7DCADF981D7F17DC0026801A /* Info.plist */,
-				7DCADFCD1D8008850026801A /* ProductParser.swift */,
-				7DCADFD01D8008DA0026801A /* Product.swift */,
-				7DCADFDA1D8059610026801A /* ProductCollectionViewCell.swift */,
-				7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */,
-				7DCADFE61D81A7540026801A /* ServerController.swift */,
-				7DCADFE91D82CF800026801A /* ProductViewController.swift */,
-				7DCADFEC1D82D5080026801A /* UIImageView+loadURL.swift */,
 			);
 			path = Dishwashers;
 			sourceTree = "<group>";
@@ -196,6 +191,35 @@
 				7DCADFAE1D7F17DC0026801A /* Info.plist */,
 			);
 			path = DishwashersUITests;
+			sourceTree = "<group>";
+		};
+		7DCADFEF1D82D8390026801A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DCADFD01D8008DA0026801A /* Product.swift */,
+				7DCADFCD1D8008850026801A /* ProductParser.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7DCADFF01D82D83F0026801A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DCADFEC1D82D5080026801A /* UIImageView+loadURL.swift */,
+				7DCADFDA1D8059610026801A /* ProductCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7DCADFF11D82D8470026801A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7DCADF8E1D7F17DC0026801A /* ProductGridCollectionViewController.swift */,
+				7DCADFDF1D805FC30026801A /* ProductGridDataSource.swift */,
+				7DCADFE91D82CF800026801A /* ProductViewController.swift */,
+				7DCADFE61D81A7540026801A /* ServerController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
