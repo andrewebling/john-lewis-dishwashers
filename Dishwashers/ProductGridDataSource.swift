@@ -30,6 +30,7 @@ class ProductGridDataSource: NSObject {
     
     internal func productForIndexPath(indexPath: NSIndexPath) -> Product? {
         
+        // in theory impossible, but being defensive
         guard indexPath.row < self.products.count else {
             return nil
         }
