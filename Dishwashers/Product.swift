@@ -13,8 +13,9 @@ import Foundation
  *   - free memberwise initialiser; less maintenance
  *   - simple enclosed values 
  *   - we don't need inheritance (yet!)
- *   - more idiomatic.  */
+ *   - more idiomatic. */
 struct Product {
+    // deliberately immutable
     let productID: Int
     let price: Float
     let title: String
