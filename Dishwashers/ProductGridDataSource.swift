@@ -35,6 +35,7 @@ class ProductGridDataSource: NSObject, UICollectionViewDataSource {
         if let product = productForIndexPath(indexPath) {
             
             cell.configureWithProduct(product, priceFormatter: self.priceFormatter)
+            cell.configureLookAndFeel()
         }
         
         return cell
