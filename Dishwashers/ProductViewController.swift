@@ -24,13 +24,13 @@ class ProductViewController:UIViewController, ProductViewer {
         super.viewWillAppear(animated)
         
         if let product = self.product {
-            configureWithProduct(product)
+            configure(withProduct: product)
         }
     }
     
-    fileprivate func configureWithProduct(_ product: Product) {
+    fileprivate func configure(withProduct product: Product) {
         self.navigationItem.title = product.title
         self.priceLabel.text = product.price.asPriceString()
-        self.imageView.loadWithURL(product.image)
+        self.imageView.load(withURL: product.image)
     }
 }

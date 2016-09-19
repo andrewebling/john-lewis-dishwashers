@@ -23,7 +23,7 @@ class ProductGridCollectionViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UICollectionViewCell,
             let indexPath = self.collectionView?.indexPath(for: cell),
-            let product = self.datasource.productForIndexPath(indexPath),
+            let product = self.datasource.product(forIndexPath: indexPath),
             var productViewer = segue.destination as? ProductViewer {
             
             productViewer.product = product
@@ -34,26 +34,26 @@ class ProductGridCollectionViewController: UICollectionViewController {
         
         self.serverController.fetchProducts({ products in
             
-            self.configureDataSourceWithProducts(products)
+            self.configureDataSource(withProducts: products)
             self.collectionView?.reloadData()
             self.navigationItem.title = "Dishwashers (\(products.count))"
         }) { (error) in
-            self.showError(error)
+            self.show(error)
         }
     }
     
-    fileprivate func configureDataSourceWithProducts(_ products: [Product]) {
+    fileprivate func configureDataSource(withProducts products: [Product]) {
         self.datasource = ProductGridDataSource(products: products)
         self.collectionView?.dataSource = self.datasource
     }
 }
 
 extension UIViewController {
-    func showError(_ error: Error?) {
-        self.present(alertControllerWithError(error), animated: true, completion: nil)
+    func show(_ error: Error?) {
+        self.present(alertController(withError: error), animated: true, completion: nil)
     }
     
-    fileprivate func alertControllerWithError(_ error: Error?) -> UIAlertController {
+    fileprivate func alertController(withError error: Error?) -> UIAlertController {
         let ac = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         return ac

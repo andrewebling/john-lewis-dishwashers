@@ -36,7 +36,7 @@ class ServerControllerImpl: ServerController {
                 case .success:
                     if let json = response.result.value {
                         do {
-                            let products = try ProductParser.productsFromJSON(JSON(json))
+                            let products = try ProductParser.products(fromJSON: JSON(json))
                             successBlock(products)
                             
                         } catch {

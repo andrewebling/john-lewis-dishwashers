@@ -28,7 +28,7 @@ class ProductGridDataSource: NSObject {
         return cell
     }
     
-    internal func productForIndexPath(_ indexPath: IndexPath) -> Product? {
+    internal func product(forIndexPath indexPath: IndexPath) -> Product? {
         
         // in theory impossible, but being defensive
         guard (indexPath as NSIndexPath).row < self.products.count else {
@@ -48,7 +48,7 @@ extension ProductGridDataSource: UICollectionViewDataSource {
         
         let cell = internalCollectionView(collectionView, cellForItemAtIndexPath: indexPath)
         
-        if let product = productForIndexPath(indexPath) {
+        if let product = product(forIndexPath: indexPath) {
             
             cell.configure(withProduct: product)
             cell.configureLookAndFeel()

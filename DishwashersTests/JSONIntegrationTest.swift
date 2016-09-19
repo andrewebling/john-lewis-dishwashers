@@ -12,15 +12,15 @@ class JSONIntegrationTest: XCTestCase {
     
     let kFixtureExtension = "json"
     
-    func fixtureDataForResourceName(filename: String) -> NSData {
+    func fixtureData(forResourceName filename: String) -> Data {
         
         let bundle = Bundle(for: type(of: self))
         
-        guard let fixturePath = bundle.path(forResource: filename, ofType: kFixtureExtension) else {
+        guard let fixtureURL = bundle.url(forResource: filename, withExtension: kFixtureExtension) else {
             fatalError("Failed to find fixture named \(filename).\(kFixtureExtension)")
         }
-        guard let fixtureData = NSData(contentsOfFile: fixturePath) ,
-            fixtureData.length > 0 else {
+        guard let fixtureData = try? Data(contentsOf: fixtureURL) ,
+            fixtureData.count > 0 else {
                 fatalError("Failed to load fixture data from \(filename).\(kFixtureExtension)")
         }
         return fixtureData

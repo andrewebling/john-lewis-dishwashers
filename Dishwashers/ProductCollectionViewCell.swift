@@ -19,7 +19,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     func configure(withProduct product: Product) {
         self.titleLabel.text = product.title
         self.priceLabel.text = product.price.asPriceString()
-        self.imageView.loadWithURL(product.image)    }
+        self.imageView.load(withURL: product.image)    }
     
     func configureLookAndFeel() {
         self.layer.borderColor = UIColor(red: 0.867, green: 0.851, blue: 0.820, alpha: 1.00).cgColor

@@ -22,9 +22,9 @@ class ProductTests: JSONIntegrationTest {
     }
     
     func testParseSingleProduct() {
-        let fixtureData = self.fixtureDataForResourceName(filename: "single-product")
-        let json = JSON(data: fixtureData as Data)
-        let product = try! ProductParser.singleProductFromJSON(json)
+        let fixtureData = self.fixtureData(forResourceName: "single-product")
+        let json = JSON(data: fixtureData)
+        let product = try! ProductParser.singleProduct(fromJSON: json)
         
         XCTAssertEqual(product.productID, 2915517)
         XCTAssertEqual(product.price, 599.00)
@@ -33,9 +33,9 @@ class ProductTests: JSONIntegrationTest {
     }
     
     func testParseProducts() {
-        let fixtureData = self.fixtureDataForResourceName(filename: "product-grid-response")
+        let fixtureData = self.fixtureData(forResourceName: "product-grid-response")
         let json = JSON(data: fixtureData as Data)
-        let products = try! ProductParser.productsFromJSON(json)
+        let products = try! ProductParser.products(fromJSON: json)
         
         XCTAssertEqual(products.count, 20)
         
