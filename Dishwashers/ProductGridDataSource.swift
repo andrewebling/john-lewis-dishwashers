@@ -17,7 +17,7 @@ class ProductGridDataSource: NSObject {
         super.init()
     }
     
-    internal func internalCollectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> ProductCollectionViewCell {
+    func internalCollectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> ProductCollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.reuseId, for: indexPath)
             as? ProductCollectionViewCell else {
@@ -50,7 +50,7 @@ extension ProductGridDataSource: UICollectionViewDataSource {
         
         if let product = productForIndexPath(indexPath) {
             
-            cell.configureWithProduct(product)
+            cell.configure(withProduct: product)
             cell.configureLookAndFeel()
         }
         

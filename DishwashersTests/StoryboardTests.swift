@@ -15,7 +15,7 @@ class StoryboardTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        self.storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
+        self.storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: type(of: self)))
     }
     
     override func tearDown() {

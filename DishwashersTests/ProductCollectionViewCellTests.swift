@@ -14,9 +14,9 @@ class ProductCollectionViewCellFake: ProductCollectionViewCell {
     override init(frame: CGRect) {
 
         super.init(frame: frame)
-        self.titleLabel = UILabel(frame: CGRectZero)
-        self.priceLabel = UILabel(frame: CGRectZero)
-        self.imageView = UIImageView(frame: CGRectZero)
+        self.titleLabel = UILabel(frame: CGRect.zero)
+        self.priceLabel = UILabel(frame: CGRect.zero)
+        self.imageView = UIImageView(frame: CGRect.zero)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,7 +26,7 @@ class ProductCollectionViewCellFake: ProductCollectionViewCell {
 
 class ProductCollectionViewCellTests: XCTestCase {
 
-    let cell = ProductCollectionViewCellFake(frame: CGRectZero)
+    let cell = ProductCollectionViewCellFake(frame: CGRect.zero)
     
     override func setUp() {
         super.setUp()
@@ -40,13 +40,13 @@ class ProductCollectionViewCellTests: XCTestCase {
 
     func testConfigureWithProduct() {
         
-        let product = Product(productID: 12345, price: 678.90, title: "ConfiguredTitle", image: NSURL(string: "http://foobar")!)
+        let product = Product(productID: 12345, price: 678.90, title: "ConfiguredTitle", image: NSURL(string: "http://foobar")! as URL)
         
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .CurrencyStyle
-        formatter.locale = NSLocale(localeIdentifier: "en_GB")
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = NSLocale(localeIdentifier: "en_GB") as Locale!
         
-        self.cell.configureWithProduct(product)
+        self.cell.configure(withProduct: product)
         
         XCTAssertEqual(cell.titleLabel.text, "ConfiguredTitle")
         XCTAssertEqual(cell.priceLabel.text, "£678.90")

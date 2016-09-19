@@ -10,15 +10,15 @@ import XCTest
 
 class ProductGridDataSourceFake: ProductGridDataSource {
     
-    override func internalCollectionView(collectionView: UICollectionView, cellForItemAtIndexPath: NSIndexPath) -> ProductCollectionViewCell {
-        return ProductCollectionViewCellFake(frame: CGRectZero)
+    override func internalCollectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> ProductCollectionViewCell {
+        return ProductCollectionViewCellFake(frame: CGRect.zero)
     }
 }
 
 class ProductGridDataSourceTests: XCTestCase {
     
-    let fakeCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
-    let fakeData = [Product](count: 42, repeatedValue: Product(productID: 4444, price: 333.66, title: "TestTitle", image: NSURL(string: "http://foobar")!))
+    let fakeCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+    let fakeData = [Product](repeating: Product(productID: 4444, price: 333.66, title: "TestTitle", image: NSURL(string: "http://foobar")! as URL), count: 42)
     var dataSource: ProductGridDataSource!
     
     override func setUp() {
@@ -26,7 +26,7 @@ class ProductGridDataSourceTests: XCTestCase {
         
         self.dataSource = ProductGridDataSourceFake(products: self.fakeData)
         self.fakeCollectionView.dataSource = self.dataSource
-        self.fakeCollectionView.registerClass(ProductCollectionViewCellFake.self, forCellWithReuseIdentifier: ProductCollectionViewCell.reuseId)
+        self.fakeCollectionView.register(ProductCollectionViewCellFake.self, forCellWithReuseIdentifier: ProductCollectionViewCell.reuseId)
         
     }
     
@@ -44,7 +44,7 @@ class ProductGridDataSourceTests: XCTestCase {
     func testCellForItemAtIndexPath() {
         
         let cell = self.dataSource.collectionView(self.fakeCollectionView,
-                                                  cellForItemAtIndexPath: NSIndexPath(forItem: 0, inSection: 0))
+                                                  cellForItemAt: IndexPath(item: 0, section: 0))
         
         XCTAssertTrue(cell is ProductCollectionViewCell)
     }

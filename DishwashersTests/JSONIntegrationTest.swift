@@ -14,12 +14,12 @@ class JSONIntegrationTest: XCTestCase {
     
     func fixtureDataForResourceName(filename: String) -> NSData {
         
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         
-        guard let fixturePath = bundle.pathForResource(filename, ofType: kFixtureExtension) else {
+        guard let fixturePath = bundle.path(forResource: filename, ofType: kFixtureExtension) else {
             fatalError("Failed to find fixture named \(filename).\(kFixtureExtension)")
         }
-        guard let fixtureData = NSData(contentsOfFile: fixturePath) where
+        guard let fixtureData = NSData(contentsOfFile: fixturePath) ,
             fixtureData.length > 0 else {
                 fatalError("Failed to load fixture data from \(filename).\(kFixtureExtension)")
         }
