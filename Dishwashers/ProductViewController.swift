@@ -20,7 +20,7 @@ class ProductViewController:UIViewController, ProductViewer {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let product = self.product {
@@ -28,7 +28,7 @@ class ProductViewController:UIViewController, ProductViewer {
         }
     }
     
-    private func configureWithProduct(product: Product) {
+    fileprivate func configureWithProduct(_ product: Product) {
         self.navigationItem.title = product.title
         self.priceLabel.text = product.price.asPriceString()
         self.imageView.loadWithURL(product.image)

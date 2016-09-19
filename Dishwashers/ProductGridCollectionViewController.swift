@@ -10,27 +10,27 @@ import UIKit
 
 class ProductGridCollectionViewController: UICollectionViewController {
     
-    private var datasource: ProductGridDataSource!
+    fileprivate var datasource: ProductGridDataSource!
     internal lazy var serverController: ServerController = {
         return ServerControllerImpl()
     }()
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fetchProducts()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UICollectionViewCell,
-            let indexPath = self.collectionView?.indexPathForCell(cell),
+            let indexPath = self.collectionView?.indexPath(for: cell),
             let product = self.datasource.productForIndexPath(indexPath),
-            var productViewer = segue.destinationViewController as? ProductViewer {
+            var productViewer = segue.destination as? ProductViewer {
             
             productViewer.product = product
         }
     }
     
-    private func fetchProducts() {
+    fileprivate func fetchProducts() {
         
         self.serverController.fetchProducts({ products in
             
@@ -42,20 +42,20 @@ class ProductGridCollectionViewController: UICollectionViewController {
         }
     }
     
-    private func configureDataSourceWithProducts(products: [Product]) {
+    fileprivate func configureDataSourceWithProducts(_ products: [Product]) {
         self.datasource = ProductGridDataSource(products: products)
         self.collectionView?.dataSource = self.datasource
     }
 }
 
 extension UIViewController {
-    func showError(error: NSError?) {
-        self.presentViewController(alertControllerWithError(error), animated: true, completion: nil)
+    func showError(_ error: Error?) {
+        self.present(alertControllerWithError(error), animated: true, completion: nil)
     }
     
-    private func alertControllerWithError(error: NSError?) -> UIAlertController {
-        let ac = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .Alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+    fileprivate func alertControllerWithError(_ error: Error?) -> UIAlertController {
+        let ac = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         return ac
     }
 }

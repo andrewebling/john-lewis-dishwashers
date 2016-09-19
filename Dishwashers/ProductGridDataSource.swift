@@ -10,16 +10,16 @@ import UIKit
 
 class ProductGridDataSource: NSObject {
 
-    private let products: [Product]
+    fileprivate let products: [Product]
     
     init(products: [Product]) {
         self.products = products
         super.init()
     }
     
-    internal func internalCollectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> ProductCollectionViewCell {
+    internal func internalCollectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> ProductCollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ProductCollectionViewCell.reuseId, forIndexPath: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.reuseId, for: indexPath)
             as? ProductCollectionViewCell else {
                 
             preconditionFailure("Collection view configured with wrong type of cell")
@@ -28,23 +28,23 @@ class ProductGridDataSource: NSObject {
         return cell
     }
     
-    internal func productForIndexPath(indexPath: NSIndexPath) -> Product? {
+    internal func productForIndexPath(_ indexPath: IndexPath) -> Product? {
         
         // in theory impossible, but being defensive
-        guard indexPath.row < self.products.count else {
+        guard (indexPath as NSIndexPath).row < self.products.count else {
             return nil
         }
-        return self.products[indexPath.row]
+        return self.products[(indexPath as NSIndexPath).row]
     }
 }
 
 extension ProductGridDataSource: UICollectionViewDataSource {
     
-    @objc func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    @objc func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.products.count
     }
     
-    @objc func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    @objc func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = internalCollectionView(collectionView, cellForItemAtIndexPath: indexPath)
         

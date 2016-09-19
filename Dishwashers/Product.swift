@@ -19,5 +19,5 @@ struct Product {
     let productID: Int
     let price: Float
     let title: String
-    let image: NSURL
+    let image: URL
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImageView {
-    func loadWithURL(url: NSURL) {
-        self.af_setImageWithURL(url, imageTransition: .CrossDissolve(0.2))
+    func loadWithURL(_ url: URL) {
+        self.af_setImage(withURL: url, imageTransition: .crossDissolve(0.2))
     }
 }

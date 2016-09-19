@@ -16,13 +16,13 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
-    func configureWithProduct(product: Product) {
+    func configureWithProduct(_ product: Product) {
         self.titleLabel.text = product.title
         self.priceLabel.text = product.price.asPriceString()
         self.imageView.loadWithURL(product.image)    }
     
     func configureLookAndFeel() {
-        self.layer.borderColor = UIColor(red: 0.867, green: 0.851, blue: 0.820, alpha: 1.00).CGColor
+        self.layer.borderColor = UIColor(red: 0.867, green: 0.851, blue: 0.820, alpha: 1.00).cgColor
         self.layer.borderWidth = 0.5
     }
     

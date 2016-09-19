@@ -12,7 +12,7 @@ import SwiftyJSON
 
 // code to an interface
 protocol ServerController {
-    func fetchProducts(successBlock: ([Product]) -> Void, failureBlock: (error: NSError?) -> Void)
+    func fetchProducts(_ successBlock: @escaping ([Product]) -> Void, failureBlock: @escaping (_ error: Error?) -> Void)
 }
 
 class ServerControllerImpl: ServerController {
@@ -22,36 +22,33 @@ class ServerControllerImpl: ServerController {
     let kProductQuery = "dishwasher"
     let kProductCount = 20
     
-    func fetchProducts(successBlock: ([Product]) -> Void, failureBlock: (error: NSError?) -> Void) {
+    func fetchProducts(_ successBlock: @escaping ([Product]) -> Void, failureBlock: @escaping (_ error: Error?) -> Void) {
         
         let params = ["q":          kProductQuery,
                       "key":        kAPIKey,
                       "pageSize":   "\(kProductCount)"]
         
-        Alamofire.request(.GET, kAPIURL, parameters: params)
+        Alamofire.request(kAPIURL, parameters: params)
             .validate().responseJSON { response in
                 
                 switch response.result {
                     
-                case .Success:
+                case .success:
                     if let json = response.result.value {
                         do {
                             let products = try ProductParser.productsFromJSON(JSON(json))
-                            /* dispatch_async not strictly required as Alamofire executes this block on the main thread - but being 
-                             * defensive against future changes. */
-                            dispatch_async(dispatch_get_main_queue(), {
-                                successBlock(products)
-                            })
+                            successBlock(products)
+                            
                         } catch {
-                            dispatch_async(dispatch_get_main_queue(), {
-                                failureBlock(error: NSError(domain: "Could not load products", code: 0, userInfo: nil))
-                            })
+                            
+                            failureBlock(NSError(domain: "Could not load products", code: 0, userInfo: nil))
+                            
                         }
                     }
-                case .Failure(let error):
-                    dispatch_async(dispatch_get_main_queue(), {
-                        failureBlock(error: error)
-                    })
+                case .failure(let error):
+                    
+                        failureBlock(error)
+                    
                 }
         }
     }

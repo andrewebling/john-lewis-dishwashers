@@ -9,34 +9,34 @@
 import Foundation
 import SwiftyJSON
 
-enum JSONParsingError: ErrorType {
-    case InvalidProductID
-    case InvalidPrice
-    case InvalidTitle
-    case InvalidImageURL
-    case InvalidProductsArray
+enum JSONParsingError: Error {
+    case invalidProductID
+    case invalidPrice
+    case invalidTitle
+    case invalidImageURL
+    case invalidProductsArray
 }
 
 class ProductParser {
-    static func singleProductFromJSON(json: JSON) throws -> Product {
+    static func singleProductFromJSON(_ json: JSON) throws -> Product {
         
         guard let productIDStr = json["productId"].string,
             let productID = Int(productIDStr) else {
-                throw JSONParsingError.InvalidProductID
+                throw JSONParsingError.invalidProductID
         }
         
         guard let priceStr = json["price"]["now"].string,
         let price = Float(priceStr) else {
-            throw JSONParsingError.InvalidPrice
+            throw JSONParsingError.invalidPrice
         }
         
         guard let title = json["title"].string else {
-            throw JSONParsingError.InvalidTitle
+            throw JSONParsingError.invalidTitle
         }
         
         guard let imageURLStr = json["image"].string,
-            let imageURL = NSURL(string: "https:\(imageURLStr)") else {
-            throw JSONParsingError.InvalidImageURL
+            let imageURL = URL(string: "https:\(imageURLStr)") else {
+            throw JSONParsingError.invalidImageURL
         }
         
         return Product(productID: productID,
@@ -45,10 +45,10 @@ class ProductParser {
                        image: imageURL)
     }
     
-    static func productsFromJSON(json: JSON) throws -> [Product] {
+    static func productsFromJSON(_ json: JSON) throws -> [Product] {
         
         guard let jsonProducts = json["products"].array else {
-            throw JSONParsingError.InvalidProductsArray
+            throw JSONParsingError.invalidProductsArray
         }
         
         var products = [Product]()
@@ -60,7 +60,7 @@ class ProductParser {
             } catch let error {
                 /* For purposes of this exercise, simply print an error and omit problematic products from results.
                  * In a real app, this should be reported back via an endpoint or via analytics. */
-                print("Product parse error at index \(jsonProducts.indexOf(productJSON)): \(error)")
+                print("Product parse error at index \(jsonProducts.index(of: productJSON)): \(error)")
             }
         }
         
