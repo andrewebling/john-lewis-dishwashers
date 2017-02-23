@@ -9,7 +9,7 @@ Technical test for John Lewis by Andrew Ebling.
 # Building
 
 1. Clone the project
-1. Open a terminal and issue the following command within the top level project directory: ```carthage update --platform iOS```
+1. Open a terminal and issue the following command within the top level project directory: ```carthage update --platform iOS --no-use-binaries```
 1. Open the Xcode project file and build in the normal way
 
 I chose to use Carthage over Cocoapods because:
