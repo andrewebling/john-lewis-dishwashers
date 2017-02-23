@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 `AlamofireImage` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 3.x Releases
+- `3.2.x` Releases - [3.2.0](#320)
+- `3.1.x` Releases - [3.1.0](#310)
 - `3.0.x` Releases - [3.0.0](#300)
 
 #### 2.x Releases
@@ -18,6 +20,90 @@ All notable changes to this project will be documented in this file.
 - `1.1.x` Releases - [1.1.0](#110) | [1.1.1](#111) | [1.1.2](#112)
 - `1.0.x` Releases - [1.0.0](#100)
 - `1.0.0` Betas - [1.0.0-beta.1](#100-beta1)
+
+---
+
+## [3.2.0](https://github.com/Alamofire/AlamofireImage/releases/tag/3.2.0)
+Released on 2016-11-20. All issues associated with this milestone can be found using this
+[filter](https://github.com/Alamofire/AlamofireImage/milestone/20?closed=1).
+
+#### Added
+- A new `imageResponseSerializer` property to the `ImageDownloader`.
+  - Added by [Tapani Saarinen](https://github.com/tapz) in Pull Request.
+  [#208](https://github.com/Alamofire/AlamofireImage/pull/208).
+- New embedded framework installation instructions to the README.
+  - Added by [Eric Horstmanshof](https://github.com/Erulezz) in Pull Request.
+  [#213](https://github.com/Alamofire/AlamofireImage/pull/213).
+- A new iOS 8.1 target to the Travis CI device matrix.
+  - Added by [Christian Noon](https://github.com/cnoon).
+
+#### Updated
+- The `AutoPurgingImageCache` APIs to an `open` ACL where applicable.
+  - Updated by [Christian Noon](https://github.com/cnoon).
+- The `ImageDownloader` and `RequestReceipt` APIs to an `open` ACL where applicable.
+  - Updated by [Christian Noon](https://github.com/cnoon).
+- The Xcode project to Xcode 8.1 and made all suggested project updates.
+  - Updated by [Christian Noon](https://github.com/cnoon).
+- `UIButton` and `UIImageView` completion closures to be called after image is set.
+  - Updated by [Christian Noon](https://github.com/cnoon) in regards to Issue
+  [#209](https://github.com/Alamofire/AlamofireImage/issues/209).
+- The deployment targets to iOS 8.0 and macOS 10.10 to match core Alamofire project.
+  - Updated by [Christian Noon](https://github.com/cnoon) in regards to Issue.
+  [#216](https://github.com/Alamofire/AlamofireImage/issues/216).
+- The Cartfile and pulled in Alamofire 4.2.0 submodule.
+  - Updated by [Christian Noon](https://github.com/cnoon).
+
+#### Removed
+- CoreImage filters on iOS 8.x due to runtime mapping issue with `CIContext`.
+  - Removed by [Christian Noon](https://github.com/cnoon).
+
+---
+
+## [3.1.0](https://github.com/Alamofire/AlamofireImage/releases/tag/3.1.0)
+Released on 2016-10-01. All issues associated with this milestone can be found using this
+[filter](https://github.com/Alamofire/AlamofireImage/milestone/19?closed=1).
+
+#### Added
+- New `.swift-version` file to repo and reactivated pod lib lint in Travis file.
+  - Added by [Christian Noon](https://github.com/cnoon).
+- The `OS_ACTIVITY_MODE` environment variable to disable excessive logging.
+  - Added by [Christian Noon](https://github.com/cnoon).
+- The new `CoreImageFilter` protocol and updated `BlurFilter` to conform to it.
+  - Added by [Florian Morello](https://github.com/arsonik) in Pull Request
+  [#101](https://github.com/Alamofire/AlamofireImage/pull/101).
+- The ability to the `AutoPurgingImageCache` to remove all images matching a URL request.
+  - Added by [Christian Noon](https://github.com/cnoon) in regards to Issue
+  [#105](https://github.com/Alamofire/AlamofireImage/issues/105).
+- `ImageFilter` support to the `UIButton` extension.
+  - Added by [gshahbazian](https://github.com/gshahbazian) in Pull Request
+  [#129](https://github.com/Alamofire/AlamofireImage/pull/129).
+- MJPEG support to `DataRequest` extension for streaming images.
+  - Added by [Robbie Trencheny](https://github.com/robbiet480) in Pull Request
+  [#185](https://github.com/Alamofire/AlamofireImage/pull/185).
+- Stream image test for `DataRequest` extension and updated docstrings.
+  - Added by [Christian Noon](https://github.com/cnoon).
+
+#### Updated
+- The Alamofire submodule to the 4.0.1 release.
+  - Updated by [Christian Noon](https://github.com/cnoon).
+- All cases of OSX to macOS throughout the project.
+  - Updated by [Justin Jia](https://github.com/JustinJiaDev) in Pull Request
+  [#181](https://github.com/Alamofire/AlamofireImage/issues/181).
+- Project settings by removing duplicate settings for individual targets.
+  - Updated by [Christian Noon](https://github.com/cnoon).
+- Project and podspec so all files are compiled on all platforms.
+  - Updated by [Christian Noon](https://github.com/cnoon).
+
+#### Fixed
+- A typo in `placeholderImage` parameter in several UIButton APIs.
+  - Fixed by [Christian Noon](https://github.com/cnoon) in regard to Issue
+  [#180](https://github.com/Alamofire/AlamofireImage/issues/180).
+- A `CIGuassianBlur` typo in one of the README code samples.
+  - Fixed by [Christian Noon](https://github.com/cnoon) in regard to Issue
+  [#189](https://github.com/Alamofire/AlamofireImage/issues/189).
+
+#### Upgrade Notes
+This release contains a non-backwards compatible change that fixes a typo in the `UIButton` extension where `placeholderImage` was misspelled in two APIs. Rather than push a MAJOR version release for a typo that people are generally getting incorrect, we decided to break semver here and fix the typo for everyone. Please note that we always try to follow semver as strictly as possible. However, this seemed like the best option given that users would continue to struggle with the typo throughout the lifespan of the 3.x releases.
 
 ---
 

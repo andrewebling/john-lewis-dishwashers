@@ -22,6 +22,8 @@
 //  THE SOFTWARE.
 //
 
+#if !os(macOS)
+
 import AlamofireImage
 import Foundation
 import UIKit
@@ -203,6 +205,8 @@ class ImageFilterTestCase: BaseTestCase {
     }
 
     func testThatBlurFilterReturnsCorrectFilteredImage() {
+        guard #available(iOS 9.0, *) else { return }
+
         // Given
         let image = self.image(forResource: "unicorn", withExtension: "png")
         let filter = BlurFilter(blurRadius: 8)
@@ -287,3 +291,5 @@ class ImageFilterTestCase: BaseTestCase {
         XCTAssertTrue(filteredImage.af_isEqualToImage(expectedFilteredImage), "filtered image pixels do not match")
     }
 }
+
+#endif

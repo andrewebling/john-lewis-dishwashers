@@ -22,6 +22,8 @@
 //  THE SOFTWARE.
 //
 
+#if !os(macOS)
+
 @testable import Alamofire
 @testable import AlamofireImage
 import UIKit
@@ -387,6 +389,28 @@ class UIButtonTests: BaseTestCase {
         XCTAssertTrue(secondEqualityCheck, "second equality check should be true")
     }
 
+    func testThatImageCanBeLoadedFromImageCacheFromRequestAndFilterIdentifierIfAvailable() {
+        // Given
+        let button = UIButton()
+
+        let downloader = ImageDownloader.default
+        let download = try! URLRequest(url: url.absoluteString, method: .get)
+        let expectation = self.expectation(description: "image download should succeed")
+
+        downloader.download(download, filter: CircleFilter()) { (_) in
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // When
+        button.af_setImage(for: .normal, url: url, filter: CircleFilter())
+        button.af_cancelImageRequest(for: .normal)
+
+        // Then
+        XCTAssertNotNil(button.image(for: .normal), "image view image should not be nil")
+    }
+
     // MARK: - Placeholder Images
 
     func testThatPlaceholderImageIsDisplayedUntilImageIsDownloadedFromURL() {
@@ -400,7 +424,7 @@ class UIButtonTests: BaseTestCase {
         let button = TestButton ()
 
         // When
-        button.af_setImage(for: [], url: url, placeHolderImage: placeholderImage)
+        button.af_setImage(for: [], url: url, placeholderImage: placeholderImage)
         let initialImageEqualsPlaceholderImage = button.image(for:[]) === placeholderImage
 
         button.imageObserver = {
@@ -428,7 +452,7 @@ class UIButtonTests: BaseTestCase {
         let button = TestButton ()
 
         // When
-        button.af_setBackgroundImage(for: [], url: url, placeHolderImage: placeholderImage)
+        button.af_setBackgroundImage(for: [], url: url, placeholderImage: placeholderImage)
         let initialImageEqualsPlaceholderImage = button.backgroundImage(for:[]) === placeholderImage
 
         button.imageObserver = {
@@ -461,7 +485,7 @@ class UIButtonTests: BaseTestCase {
         waitForExpectations(timeout: timeout, handler: nil)
 
         // When
-        button.af_setImage(for: [], url: url, placeHolderImage: placeholderImage)
+        button.af_setImage(for: [], url: url, placeholderImage: placeholderImage)
 
         // Then
         XCTAssertNotNil(button.image(for: UIControlState()), "button image should not be nil")
@@ -484,11 +508,39 @@ class UIButtonTests: BaseTestCase {
         waitForExpectations(timeout: timeout, handler: nil)
 
         // When
-        button.af_setBackgroundImage(for: [], url: url, placeHolderImage: placeholderImage)
+        button.af_setBackgroundImage(for: [], url: url, placeholderImage: placeholderImage)
 
         // Then
         XCTAssertNotNil(button.backgroundImage(for: UIControlState()), "button background image should not be nil")
         XCTAssertFalse(button.backgroundImage(for:[]) === placeholderImage, "button background image should not equal placeholder image")
+    }
+
+    // MARK: - Image Filters
+
+    func testThatImageFilterCanBeAppliedToDownloadedImageBeforeBeingDisplayed() {
+        // Given
+        let size = CGSize(width: 20, height: 20)
+        let filter = ScaledToSizeFilter(size: size)
+
+        let expectation = self.expectation(description: "image download should succeed")
+        var imageDownloadComplete = false
+
+        let button = TestButton {
+            imageDownloadComplete = true
+            expectation.fulfill()
+        }
+
+        // When
+        button.af_setImage(for: .normal, url: url, filter: filter)
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertTrue(imageDownloadComplete, "image download complete should be true")
+        XCTAssertNotNil(button.image(for: .normal), "image view image should not be nil")
+
+        if let image = button.image(for: .normal) {
+            XCTAssertEqual(image.size, size, "image size does not match expected value")
+        }
     }
 
     // MARK: - Completion Handler
@@ -892,3 +944,5 @@ class UIButtonTests: BaseTestCase {
         }
     }
 }
+
+#endif

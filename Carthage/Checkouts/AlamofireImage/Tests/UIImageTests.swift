@@ -22,6 +22,8 @@
 //  THE SOFTWARE.
 //
 
+#if !os(macOS)
+
 import AlamofireImage
 import Foundation
 import UIKit
@@ -338,6 +340,8 @@ class UIImageTestCase: BaseTestCase {
     // MARK: - Core Image Filters
 
     func testThatImageWithAppliedGaussianBlurFilterReturnsBlurredImage() {
+        guard #available(iOS 9.0, *) else { return }
+
         // Given
         let parameters: [String: Any] = ["inputRadius": 8]
 
@@ -356,6 +360,8 @@ class UIImageTestCase: BaseTestCase {
     }
 
     func testThatImageWithAppliedSepiaToneFilterReturnsSepiaImage() {
+        guard #available(iOS 9.0, *) else { return }
+
         // Given, When
         let sepiaImage = unicornImage.af_imageFiltered(withCoreImageFilter: "CISepiaTone")
 
@@ -369,6 +375,8 @@ class UIImageTestCase: BaseTestCase {
     }
 
     func testThatInvalidCoreImageFilterReturnsNil() {
+        guard #available(iOS 9.0, *) else { return }
+
         // Given
         let filterName = "SomeFilterThatDoesNotExist"
 
@@ -379,3 +387,5 @@ class UIImageTestCase: BaseTestCase {
         XCTAssertNil(filteredImage, "filtered image should be nil")
     }
 }
+
+#endif
