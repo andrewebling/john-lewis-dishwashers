@@ -3,7 +3,7 @@ Technical test for John Lewis by Andrew Ebling.
 
 # Requirements
 
-* Xcode 7.3.1/iOS 9 SDK
+* Xcode 8/iOS 10 SDK
 * Carthage 0.11.0 or later
 
 # Building
